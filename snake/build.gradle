@@ -47,7 +47,7 @@ publish {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(dir: 'libs', include: ['*.jar'])
 
     api deps.android.support.compat
     api project(":snake-annotations")

@@ -50,6 +50,18 @@ public class BaseActivity extends AppCompatActivity {
         onInitView();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("ULog_default", this.getClass().getName() + ": onResume");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("ULog_default", this.getClass().getName() + ": onStop");
+    }
+
     private void prepare() {
         mContentView = new LinearLayout(this);
         mContentView.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
