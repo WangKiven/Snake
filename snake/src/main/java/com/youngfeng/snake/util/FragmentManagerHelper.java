@@ -11,13 +11,13 @@ import android.view.View;
  */
 public class FragmentManagerHelper {
     private FragmentManager mFragmentManager;
-    private android.support.v4.app.FragmentManager mSupportFragmentManager;
+    private androidx.fragment.app.FragmentManager mSupportFragmentManager;
 
     public FragmentManagerHelper(FragmentManager fragmentManager) {
         mFragmentManager = fragmentManager;
     }
 
-    public FragmentManagerHelper(android.support.v4.app.FragmentManager fragmentManager) {
+    public FragmentManagerHelper(androidx.fragment.app.FragmentManager fragmentManager) {
         mSupportFragmentManager = fragmentManager;
     }
 
@@ -25,7 +25,7 @@ public class FragmentManagerHelper {
         return new FragmentManagerHelper(fragmentManager);
     }
 
-    public static FragmentManagerHelper get(android.support.v4.app.FragmentManager fragmentManager) {
+    public static FragmentManagerHelper get(androidx.fragment.app.FragmentManager fragmentManager) {
         return new FragmentManagerHelper(fragmentManager);
     }
 
@@ -38,11 +38,11 @@ public class FragmentManagerHelper {
         return mFragmentManager.findFragmentByTag(fragmentTag);
     }
 
-    public android.support.v4.app.Fragment getLastSupportFragment() {
+    public androidx.fragment.app.Fragment getLastSupportFragment() {
         int backStackCount = mSupportFragmentManager.getBackStackEntryCount();
         if (backStackCount <= 0) return null;
 
-        android.support.v4.app.FragmentManager.BackStackEntry backStackEntry = mSupportFragmentManager.getBackStackEntryAt(backStackCount - 1);
+        androidx.fragment.app.FragmentManager.BackStackEntry backStackEntry = mSupportFragmentManager.getBackStackEntryAt(backStackCount - 1);
         String fragmentTag = backStackEntry.getName();
         return mSupportFragmentManager.findFragmentByTag(fragmentTag);
     }

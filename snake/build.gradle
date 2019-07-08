@@ -1,17 +1,17 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+//apply plugin: 'com.novoda.bintray-release'
 
 android {
-    compileSdkVersion versions.compileSdk
-    buildToolsVersion versions.androidTools
+    compileSdkVersion 29//versions.compileSdk
+    //buildToolsVersion versions.androidTools
 
     defaultConfig {
-        minSdkVersion versions.minSdk
-        targetSdkVersion versions.compileSdk
+        minSdkVersion 14//versions.minSdk
+        targetSdkVersion 29//versions.compileSdk
         versionCode 10
         versionName "0.1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         javaCompileOptions {
             annotationProcessorOptions {
@@ -34,21 +34,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildToolsVersion = '29.0.0'
 }
 
-publish {
+/*publish {
     repoName = 'android'
     userOrg = 'ouyangfeng2016'
     groupId = 'com.youngfeng.android'
     artifactId = 'snake'
-    publishVersion = snakeVersions.snake
+    publishVersion = '0.1.0'//snakeVersions.snake
     desc = 'Implement ios-like slide-off function by using inheritance on Fragment'
     website = 'https://github.com/yuanhoujun/Android_Slide_To_Close'
-}
+}*/
 
 dependencies {
-    api fileTree(dir: 'libs', include: ['*.jar'])
+    //api fileTree(dir: 'libs', include: ['*.jar'])
 
-    api deps.android.support.compat
+    api 'androidx.appcompat:appcompat:1.0.2'//deps.android.support.compat
     api project(":snake-annotations")
 }

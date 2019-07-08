@@ -1,5 +1,5 @@
 apply plugin: 'java-library'
-apply plugin: 'com.novoda.bintray-release'
+//apply plugin: 'com.novoda.bintray-release'
 
 sourceCompatibility = "1.7"
 targetCompatibility = "1.7"
@@ -7,13 +7,13 @@ targetCompatibility = "1.7"
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(":snake-annotations")
-    implementation deps.auto.common
+    implementation "com.google.auto:auto-common:0.10"//deps.auto.common
 
-    api deps.javapoet
-    compileOnly deps.auto.service
+    api "com.squareup:javapoet:1.10.0"//deps.javapoet
+    compileOnly "com.google.auto.service:auto-service:1.0-rc4"//deps.auto.service
 }
 
-publish {
+/*publish {
     repoName = 'android'
     userOrg = 'ouyangfeng2016'
     groupId = 'com.youngfeng.android'
@@ -21,6 +21,6 @@ publish {
     publishVersion = snakeVersions.snakeCompiler
     desc = 'Snake compiler'
     website = 'https://github.com/yuanhoujun/Android_Slide_To_Close'
-}
+}*/
 
 

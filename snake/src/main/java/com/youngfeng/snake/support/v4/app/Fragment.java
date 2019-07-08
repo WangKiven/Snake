@@ -2,7 +2,7 @@ package com.youngfeng.snake.support.v4.app;
 
 import android.animation.Animator;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -22,7 +22,7 @@ import java.lang.reflect.Field;
  *
  * @author Scott Smith 2018-03-04 14:45
  */
-public class Fragment extends android.support.v4.app.Fragment implements SnakeAnimationController {
+public class Fragment extends androidx.fragment.app.Fragment implements SnakeAnimationController {
     private SnakeHackLayout mSnakeLayout;
     private boolean mDisableAnimation;
 
@@ -49,7 +49,7 @@ public class Fragment extends android.support.v4.app.Fragment implements SnakeAn
         }
 
         try {
-            Field mView = android.support.v4.app.Fragment.class.getDeclaredField("mView");
+            Field mView = androidx.fragment.app.Fragment.class.getDeclaredField("mView");
             mView.setAccessible(true);
             mView.set(this, mSnakeLayout);
         } catch (Throwable e) {
